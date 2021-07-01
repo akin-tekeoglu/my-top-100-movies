@@ -1,3 +1,5 @@
+import dotenv from 'dotenv';
+dotenv.config() // Loading configurations. This should be the first thing
 import { NestFactory } from '@nestjs/core';
 import { NestExpressApplication } from '@nestjs/platform-express';
 import { Module } from '@nestjs/common';
