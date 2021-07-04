@@ -1,6 +1,6 @@
 ## About
 
-An app something similar to [this](https://www.themoviedb.org/). Users can make their own list and interact with each other's list.
+A movie list app that is backed by [themoviedb](https://www.themoviedb.org/). Users can make their own list and interact with each other's list.
 
 ## Requirements
 
