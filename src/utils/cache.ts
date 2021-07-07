@@ -1,4 +1,6 @@
 
+// This needs to be replaced with redis in production 
+// TODO add TTL as argument
 const cache = {}
 export async function getSet<T>(key: string, producer: () => Promise<T>): Promise<T> {
     if (key in cache)
@@ -9,10 +11,10 @@ export async function getSet<T>(key: string, producer: () => Promise<T>): Promis
 }
 
 
-
+// Below code is copied from https://stackoverflow.com/questions/14488745/javascript-json-date-deserialization
+// It helps to deserialize date types correctly
 const reISO = /^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2}(?:\.\d*))(?:Z|(\+|-)([\d|:]*))?$/;
 const reMsAjax = /^\/Date\((d|-|.*)\)[\/|\\]$/;
-
 function dateParser (key, value) {
     // first, just make sure the property is a string:
     if (typeof value === 'string') {

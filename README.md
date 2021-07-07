@@ -12,5 +12,5 @@ A movie list app that is backed by [themoviedb](https://www.themoviedb.org/). Us
 ## Installation
 
 - `npm install`
-- `echo API_KEY=your-api-key > .env`
+- Create `.env` file based on `.env.example`
 - `npm run start:dev`

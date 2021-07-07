@@ -11,7 +11,8 @@ const engine = exphbs({
             this._sections[name] = options.fn(this);
             return null;
         },
-        dateTimeFormat: context => context && context.toLocaleDateString()
+        dateTimeFormat: context => context && context.toLocaleDateString(),
+        monetaryFormat: context => context && new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(context)
     }
 })
 export default engine;

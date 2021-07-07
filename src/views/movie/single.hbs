@@ -1,0 +1,28 @@
+{{#> layouts/main }}
+<div class="container">
+    {{#with movie}}
+    <div class="card mb-3">
+        <img src="https://image.tmdb.org/t/p/original/{{image}}" class="card-img-top">
+        <div class="card-body">
+            <h5 class="card-title">{{title}} <span class="badge bg-primary">{{vote}} </span> <span class="badge bg-info text-dark">{{voteCount}} </span> <span class="badge bg-secondary">{{language}}</span></h5>
+            <p class="card-text">{{overview}}</p>
+            <p class="card-text">Revenue: {{monetaryFormat revenue}}</p>
+            <p class="card-text">Budget: {{monetaryFormat budget}}</p>
+            <p class="card-text">Duration: {{runtime}} minutes</p>
+            <p class="card-text">Status: {{status}}</p>
+            <p><a href="{{homepage}}">Homepage</a></p>
+            <p class="card-text">Genres: {{genres}}</p>
+            {{#if tagline}}
+            <p class="card-text">Tagline: {{tagline}}</p>
+            {{/if}}
+            <div class="mb-3">
+            {{#each productionCompanies}}
+                <img src="https://image.tmdb.org/t/p/original/{{this}}" class="img-circle" style="max-width: 100px;">
+            {{/each}}
+            </div>
+            <p class="card-text"><small class="text-muted">{{dateTimeFormat releaseDate}}</small></p>
+        </div>
+    </div>
+    {{/with}}
+</div>
+{{/layouts/main}}
